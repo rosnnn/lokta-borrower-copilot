@@ -1,0 +1,233 @@
+:root {
+  --bg: #FBF9FA;
+  --bg2: #F3EEF1;
+  --bg3: #FFFFFF;
+  --ink: #221A20;
+  --ink-secondary: #4A3E47;
+  --muted: #6E6069;
+  --rule: #E2D9DE;
+  --rule-light: #ECE5E9;
+  
+  --accent: #4B2440;
+  --accent-light: #6E395F;
+  --accent-ink: #FBF9FA;
+  --accent-soft: #EFE3EA;
+  --accent-soft-hover: #E5D5DF;
+  
+  --warn: #8A4B12;
+  --warn-soft: #FBF0E6;
+  --warn-border: #E8BF96;
+  
+  --success: #1E6B47;
+  --success-soft: #E8F5EE;
+  --success-border: #A3D9BC;
+  
+  --danger: #9E2A2B;
+  --danger-soft: #FDECEC;
+  --danger-border: #F3A8A9;
+
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --body: "Source Sans 3", "Segoe UI", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+  --mono: "IBM Plex Mono", Menlo, Consolas, monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --shadow-sm: 0 1px 3px rgba(34, 26, 32, 0.05);
+  --shadow-md: 0 4px 12px rgba(34, 26, 32, 0.07);
+  --shadow-lg: 0 10px 25px rgba(34, 26, 32, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg: #151017;
+  --bg2: #1E1621;
+  --bg3: #251B29;
+  --ink: #EEE6EA;
+  --ink-secondary: #C8BDC4;
+  --muted: #9E8F9A;
+  --rule: #36293C;
+  --rule-light: #2A1F30;
+  
+  --accent: #D9AECB;
+  --accent-light: #ECC7E0;
+  --accent-ink: #17121A;
+  --accent-soft: #2D1D2C;
+  --accent-soft-hover: #3A2639;
+  
+  --warn: #EAA86C;
+  --warn-soft: #312115;
+  --warn-border: #5E3E20;
+  
+  --success: #52C289;
+  --success-soft: #122B1E;
+  --success-border: #23543B;
+  
+  --danger: #E56B6F;
+  --danger-soft: #331518;
+  --danger-border: #6B272C;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.num, .font-mono {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.font-display {
+  font-family: var(--display);
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* App Container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 4rem;
+}
+
+/* Utilities */
+.card {
+  background: var(--bg3);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  border-color: var(--accent-light);
+  box-shadow: var(--shadow-md);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.badge-green {
+  background: var(--success-soft);
+  color: var(--success);
+  border: 1px solid var(--success-border);
+}
+
+.badge-yellow {
+  background: var(--warn-soft);
+  color: var(--warn);
+  border: 1px solid var(--warn-border);
+}
+
+.badge-red {
+  background: var(--danger-soft);
+  color: var(--danger);
+  border: 1px solid var(--danger-border);
+}
+
+.badge-purple {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent-light);
+}
+
+/* Grid systems */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print Stylesheet for Negotiation Card */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  header, .app-header, .no-print, .persona-bar, .tab-nav, .questionnaire-pane {
+    display: none !important;
+  }
+
+  .main-content {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .negotiation-card-print-target {
+    border: 2px solid #000 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    padding: 1.5rem !important;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+    background: #fff !important;
+  }
+}
