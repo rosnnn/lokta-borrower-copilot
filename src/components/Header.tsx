@@ -157,7 +157,7 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Main Navigation Tabs */}
-          <div style={{ display: 'flex', gap: '0.35rem', background: 'var(--bg3)', padding: '0.25rem', borderRadius: '8px', border: '1px solid var(--rule)' }}>
+          <div className="scrollable-nav" style={{ background: 'var(--bg3)', padding: '0.25rem', borderRadius: '8px', border: '1px solid var(--rule)' }}>
             <button
               onClick={() => setActiveTab('copilot')}
               style={{

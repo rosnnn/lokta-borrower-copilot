@@ -58,7 +58,7 @@ export const App: React.FC = () => {
       {/* Main Content Pane */}
       <main className="main-content">
         {activeTab === 'copilot' && (
-          <div style={{ display: 'grid', gridTemplateColumns: 'minmax(340px, 420px) 1fr', gap: '1.75rem', alignItems: 'start' }}>
+          <div className="copilot-layout">
             <Questionnaire inputs={inputs} onChange={setInputs} />
             <ResultsDashboard
               result={assessmentResult}
